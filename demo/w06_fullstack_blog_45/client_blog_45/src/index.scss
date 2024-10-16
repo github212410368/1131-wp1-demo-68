@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #645cff;
+  --primary-dark: #3c3799;
+  --grey-light: #f1f5f9;
+  --grey: #64748b;
+  --grey-dark: #0f172a;
+  --letter-spacing: 2px;
+  --fluid-width: 90vw;
+  --max-width: 1170px;
+  --border-radius: 0.15rem;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: var(--grey-light);
+  color: var(--grey-dark);
+  font-size: 12px;
+}
+
+//*********
+//  Blog
+//*********
+
+.blogs {
+  padding: 5rem 0;
+
+  .section-title {
+    h2 {
+      text-align: center;
+      text-transform: capitalize;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      text-align: center;
+      text-transform: capitalize;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.blogs-center {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: var(--fluid-width);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  /* max-width: 500px; */
+
+  .blog {
+    background-color: white;
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: 0.5s ease-in-out all;
+
+    .img {
+      width: 100%;
+      height: 12rem;
+      display: block;
+      object-fit: cover;
+    }
+
+    &:hover {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    }
+    &-img {
+      border-radius: var(--border-radius);
+      margin-bottom: 0.5rem;
+    }
+    &-content {
+      padding-bottom: 1rem;
+
+      span {
+        text-transform: uppercase;
+        color: var(--primary);
+        letter-spacing: var(--letter-spacing);
+        font-weight: 500;
+      }
+
+      h3 {
+        text-transform: capitalize;
+        letter-spacing: var(--letter-spacing);
+        margin: 0.5rem 0;
+      }
+
+      p {
+        color: var(--grey);
+        margin-bottom: 0.5rem;
+      }
+
+      a {
+        text-transform: capitalize;
+        color: var(--primary-dark);
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .blogs-center {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .blogs-center {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .blogs-center {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+//************
+// Booklist
+//************
+
+.booklist {
+  width: 90%;
+  display: grid;
+  gap: 1.5rem;
+  margin: 3rem auto;
+
+  .book {
+    background-color: #fff;
+    border: 1px solid #222;
+    border-radius: 0.5rem;
+    padding: 1rem;
+
+    img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      margin: 0 auto;
+    }
+  }
+
+  .bookinfo {
+    font-family: 'Roboto', 'sans-serif';
+    color: #444;
+
+    h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      padding-top: 0.5rem;
+    }
+
+    h4 {
+      font-size: 0.8rem;
+      padding-top: 0.5rem;
+      color: #666;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .booklist {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .booklist {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .booklist {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .booklist {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .booklist {
+    max-width: 1500px;
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
